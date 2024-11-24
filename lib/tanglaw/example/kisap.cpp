@@ -18,7 +18,7 @@ void loop() {
     ilaw2.kisap(100);  // Kisap tuwing 100ms
     ilaw3.kisap(200);  // Kisap tuwing 200ms
     ilaw4.kisap(500);  // Kisap tuwing 500ms
-    ilaw5.kisap();      // Default na kisap (500ms)
+    ilaw5.kisap();     // Default na kisap (500ms)
 
     delay(10);  // Small delay for CPU stability
 }

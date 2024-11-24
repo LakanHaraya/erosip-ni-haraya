@@ -12,6 +12,6 @@ void setup() {
 }
 
 void loop() {
-    led.magtikwas();        // Itikwas ang estado ng LED (SINDI/PANHAW)
-    delay(1000);            // Maghintay ng 1 segundo bago muling magtikwas
+    led.panhaw();        // MAGPANHAW ng LED
+    delay(1000);            // Panatilihing NAKAPANHAW sa 1 segundo
 }

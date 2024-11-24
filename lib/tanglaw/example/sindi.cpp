@@ -12,6 +12,6 @@ void setup() {
 }
 
 void loop() {
-    led.magsindi();     // MAGSINDI ng LED
+    led.sindi();     // MAGSINDI ng LED
     delay(1000);        // Panatilihing NAKASINDI sa 1 segundo
 }
