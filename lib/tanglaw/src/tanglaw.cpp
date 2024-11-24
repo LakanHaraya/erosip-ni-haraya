@@ -11,14 +11,10 @@ Tanglaw::Tanglaw(uint8_t pin, unsigned long nakatakdangTagal) {
 }
 
 // Magsisindi ng LED
-void Tanglaw::sindi() {
-    digitalWrite(_pin, HIGH);   // Itakda ang pin sa HIGH para magsindi ng LED
-}
+void Tanglaw::sindi() { digitalWrite(_pin, HIGH); }  // Itakda ang pin sa HIGH para magsindi ng LED
 
 // Magpapanhaw ng LED
-void Tanglaw::panhaw() {
-    digitalWrite(_pin, LOW);    // Itakda ang pin sa LOW para magpanhaw ng LED
-}
+void Tanglaw::panhaw() { digitalWrite(_pin, LOW); }   // Itakda ang pin sa LOW para magpanhaw ng LED
 
 // Magpapatikwas ng LED (SINDI/PANHAW)
 void Tanglaw::tikwas() {
@@ -36,3 +32,21 @@ void Tanglaw::kisap(unsigned long tagal) {
         _hulingMillis = kasalukuyangMillis;                 // Isapanahon ang huling sandali ng pagtikwas
     }
 }
+
+//! Gawing di-humahadlang ang `Tanglaw::kupas()`
+// Kumukupas na LED: dahan-dahang tinataas at binababa ang ningning gamit ang `analogWrite`
+void Tanglaw::kupas(unsigned long tagal) {        
+    
+    // Kumupas palitaw: Pinatataas na ningning (0 patungong 255)
+    for (int brightness = 0; brightness <= 255; brightness++) {
+        analogWrite(_pin, brightness);       // Control the brightness
+        delay(tagal / 255);                   // Delay to control fade speed
+    }
+
+    // Kumupas palaho: Pinabababang ningning (255 patungong 0)
+    for (int brightness = 255; brightness >= 0; brightness--) {
+        analogWrite(_pin, brightness);       // Control the brightness
+        delay(tagal / 255);                   // Delay to control fade speed
+    }
+}
+//! Gawing di-humahadlang ang `Tanglaw::kupas()`

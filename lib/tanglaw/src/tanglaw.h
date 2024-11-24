@@ -19,6 +19,7 @@ public:
     void panhaw();                              // MAGPANHAW ng LED
     void tikwas();                              // Patikwasin ang LED (SINDI/PANHAW)
     void kisap(unsigned long tagal = 0);        // Di-humahadalang na magpakisap ng LED sa loob ng tinukoy na tagal
+    void kupas(unsigned long tagal = 1000);     //! Gawing di-humahadlang na bloke ng kodigo
 };
 
 #endif  // TANGLAW_H
